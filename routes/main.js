@@ -15,12 +15,12 @@ return new Promise((res,rej)=>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: 'anilalappy@gmail.com', // generated ethereal user
-            pass: 'ogmitewylzkgmrcj', // generated ethereal password
+            user: 'testingdev.js@gmail.com', // generated ethereal user
+            pass: 'nmbymbwaxggvykkp', // generated ethereal password
         },
     });
     let info = transporter.sendMail({
-        from: 'anilalappy@gmail.com', // sender address
+        from: 'testingdev.js@gmail.com', // sender address
         to: email, // list of receivers
         subject: "Hello ✔", // Subject line
         text: "Hello world?", // plain text body
