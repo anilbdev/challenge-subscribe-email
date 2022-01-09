@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const main = async (email) => {
+const main =  (email) => {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     // let testAccount = await nodemailer.createTestAccount();
@@ -8,6 +8,7 @@ const main = async (email) => {
     // console.log(testAccount);
 
     // create reusable transporter object using the default SMTP transport
+return new Promise((res,rej)=>{
     let transporter = nodemailer.createTransport({
         service: 'Gmail',
         host: "smtp.gmail.com",
@@ -18,7 +19,7 @@ const main = async (email) => {
             pass: 'ogmitewylzkgmrcj', // generated ethereal password
         },
     });
-    let info = await transporter.sendMail({
+    let info = transporter.sendMail({
         from: 'anilalappy@gmail.com', // sender address
         to: email, // list of receivers
         subject: "Hello ✔", // Subject line
@@ -33,6 +34,10 @@ const main = async (email) => {
     // Preview only available when sending through an Ethereal account
     // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...  
+    res()
+
+})
+
 }
 
 

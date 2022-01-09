@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
     //   res.render('index', { title: 'Anil' });
     email =req.body.email
     console.log('home ------------post',email);
-    main(email).then((res)=>{
+    main(email).then(()=>{
         // res.redirect('/home/mailer')
         res.send('Mail send successfully')
     }).catch((err)=>{
