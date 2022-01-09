@@ -19,3 +19,9 @@
   border-radius: 20px;
   background-color: coral;
 }
+.introPage{
+  border-radius: 20px;
+  background-color: rgb(112, 136, 240);
+  height: 200px;
+  padding: 10px;
+}
