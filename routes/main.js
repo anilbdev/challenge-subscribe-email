@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
 const nodemailer = require("nodemailer");
 
-const main = async () => {
+const main = async (email) => {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     // let testAccount = await nodemailer.createTestAccount();
@@ -22,7 +20,7 @@ const main = async () => {
     });
     let info = await transporter.sendMail({
         from: 'anilalappy@gmail.com', // sender address
-        to: "freyaasgard.dev@gmail.com", // list of receivers
+        to: email, // list of receivers
         subject: "Hello ✔", // Subject line
         text: "Hello world?", // plain text body
         html: "<b>Hello world?</b>", // html body
@@ -39,14 +37,4 @@ const main = async () => {
 
 
 // main()
-
-
-
-
-/* GET mailer page. */
-router.post('/', function (req, res, next) {
-    //   res.render('index', { title: 'Anil' });
-    res.send(req.body)
-});
-
-module.exports = router;
+module.exports = main
